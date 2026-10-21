@@ -5,6 +5,11 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
 First, run the development server:
 
 ```bash
+#para ativar o conteiner do servidor do Redis
+docker run --name redis-tcc -p 6379:6379 -d redis:alpine
+#Para verificar se ele está rodando:
+docker ps
+#entrar na pasta da aplicacao
 cd MyVicinity-V2
 npm run dev
 # or
