@@ -1,4 +1,4 @@
-// Tipos das respostas das APIs da V1.2, usados apenas pelo frontend.
+// Tipos das respostas das APIs, usados apenas pelo frontend.
 
 // Item retornado por /api/geocode (resposta direta do Nominatim).
 export type GeocodeResult = {

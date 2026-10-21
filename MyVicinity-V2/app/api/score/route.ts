@@ -1,5 +1,7 @@
 import { haversineDistance } from "@/lib/geo";
-import { getCategory, CATEGORIES } from "@/lib/categories";
+import { cacheGet, cacheSet } from "@/lib/cache";
+import type { ScoreResponse } from "@/lib/types";
+import { getCategory, CATEGORIES, type Category } from "@/lib/categories";
 
 import {
   calculateQuantityScore,
@@ -23,20 +25,8 @@ import {
   tryAcquireUpstream,
 } from "@/lib/rate-limit";
 
- // Armazena os resultados das consultas temporariamente na memória.
-const scoreCache = new Map<
-  string,
-  {
-    expiresAt: number;
-    data: unknown;
-  }
->();
-
-// Define por quanto tempo um resultado pode permanecer no cache.
-const CACHE_DURATION = 5 * 60 * 1000;
-
-// Quantidade máxima de consultas guardadas, para limitar o uso de memória.
-const MAX_CACHE_ENTRIES = 200;
+// Define por quanto tempo (em segundos) um resultado pode permanecer no cache.
+const CACHE_TTL_SECONDS = 5 * 60;
 
 // Limites aceitos para o raio de busca (em metros).
 const MIN_RADIUS = 100;
@@ -61,34 +51,6 @@ function readNumber(
 // praticamente iguais e limita a variedade de consultas.
 function round5(value: number): number {
   return Math.round(value * 1e5) / 1e5;
-}
-
-// Guarda o resultado removendo entradas vencidas ou antigas se necessário.
-function storeInCache(key: string, data: unknown) {
-  const now = Date.now();
-
-  if (scoreCache.size >= MAX_CACHE_ENTRIES) {
-    for (const [cachedKey, value] of scoreCache) {
-      if (value.expiresAt <= now) {
-        scoreCache.delete(cachedKey);
-      }
-    }
-
-    while (scoreCache.size >= MAX_CACHE_ENTRIES) {
-      const oldest = scoreCache.keys().next().value;
-
-      if (oldest === undefined) {
-        break;
-      }
-
-      scoreCache.delete(oldest);
-    }
-  }
-
-  scoreCache.set(key, {
-    data,
-    expiresAt: now + CACHE_DURATION,
-  });
 }
 
 // Consulta a API de pontuação para as coordenadas fornecidas.
@@ -142,22 +104,17 @@ export async function GET(request: Request) {
   // Cria uma chave usando as coordenadas e o raio da consulta.
   const cacheKey = `${latitude}:${longitude}:${radius}`;
 
-  // Procura um resultado armazenado para essa localização.
-  const cachedResult = scoreCache.get(cacheKey);
+  // Procura um resultado armazenado (Redis, com fallback em memória).
+  const cached = await cacheGet<ScoreResponse>(cacheKey);
 
-  // Verifica se o resultado encontrado ainda está dentro do prazo.
-  if (cachedResult) {
-    if (Date.now() < cachedResult.expiresAt) {
-      // Retorna o resultado armazenado sem consultar a Overpass.
-      return Response.json(cachedResult.data, {
-        headers: {
-          "X-Cache": "HIT",
-        },
-      });
-    }
-
-    // Remove o resultado quando ele estiver vencido.
-    scoreCache.delete(cacheKey);
+  if (cached) {
+    // Retorna o resultado armazenado sem consultar a Overpass.
+    return Response.json(cached.data, {
+      headers: {
+        "X-Cache": "HIT",
+        "X-Cache-Source": cached.source,
+      },
+    });
   }
 
   // A Overpass utiliza metros.
@@ -230,7 +187,7 @@ export async function GET(request: Request) {
 
             headers: {
               "Content-Type": "application/x-www-form-urlencoded",
-              "User-Agent": "MorarBem/1.0 (projeto acadêmico)",
+              "User-Agent": "MyVicinity/2.0 (projeto acadêmico)",
             },
 
             body: new URLSearchParams({
@@ -346,8 +303,6 @@ export async function GET(request: Request) {
         longitude: longitude2,
 
         distance,
-
-        tags,
       };
     })
         .filter(
@@ -364,42 +319,12 @@ export async function GET(request: Request) {
 
   // Agrupa os estabelecimentos
   // pelas categorias.
-  const groupedResults = {
-    transporte: results.filter(
-      (result) =>
-        result.category === "transporte"
-    ),
-
-    educacao: results.filter(
-      (result) =>
-        result.category === "educacao"
-    ),
-
-    comercio: results.filter(
-      (result) =>
-        result.category === "comercio"
-    ),
-
-    saude: results.filter(
-      (result) =>
-        result.category === "saude"
-    ),
-
-    administrativo: results.filter(
-      (result) =>
-        result.category === "administrativo"
-    ),
-
-    lazer: results.filter(
-      (result) =>
-        result.category === "lazer"
-    ),
-
-    religioso: results.filter(
-      (result) =>
-        result.category === "religioso"
-    ),
-  };
+  const groupedResults = Object.fromEntries(
+    (Object.keys(CATEGORIES) as Category[]).map((category) => [
+      category,
+      results.filter((result) => result.category === category),
+    ])
+  ) as Record<Category, typeof results>;
 
   /*
    * Calcula a nota de uma categoria.
@@ -497,42 +422,12 @@ export async function GET(request: Request) {
     );
   }
 
-  const categoryScores = {
-    transporte:
-      calculateCategory(
-        "transporte"
-      ),
-
-    educacao:
-      calculateCategory(
-        "educacao"
-      ),
-
-    comercio:
-      calculateCategory(
-        "comercio"
-      ),
-
-    saude:
-      calculateCategory(
-        "saude"
-      ),
-
-    administrativo:
-      calculateCategory(
-        "administrativo"
-      ),
-
-    lazer:
-      calculateCategory(
-        "lazer"
-      ),
-
-    religioso:
-      calculateCategory(
-        "religioso"
-      ),
-  };
+  const categoryScores = Object.fromEntries(
+    (Object.keys(CATEGORIES) as Category[]).map((category) => [
+      category,
+      calculateCategory(category),
+    ])
+  ) as Record<Category, number>;
 
   // Calcula a nota final aplicando
   // os pesos de cada categoria.
@@ -548,8 +443,8 @@ export async function GET(request: Request) {
     overallScore,
   };
 
-  // Guarda o resultado com o horário de expiração.
-  storeInCache(cacheKey, responseData);
+  // Guarda o resultado com tempo de expiração. Falhas do Redis não afetam a resposta.
+  await cacheSet(cacheKey, responseData, CACHE_TTL_SECONDS);
 
   // Retorna o resultado calculado e informa que não veio do cache.
   return Response.json(responseData, {

@@ -136,7 +136,7 @@ export default function CategoryCard({
 
         {expanded && count > 0 && (
           <div className="mt-3 pt-3 border-t border-border">
-            {/* A V1.2 retorna todos os estabelecimentos do raio, então a lista tem rolagem própria. */}
+            {/* A API retorna todos os estabelecimentos do raio, então a lista tem rolagem própria. */}
             <ul className="flex flex-col gap-1 max-h-72 overflow-y-auto">
               {sortedPlaces.map((place) => (
                 <li key={`${place.type}-${place.id}`}>

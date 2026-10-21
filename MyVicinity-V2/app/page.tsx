@@ -2,8 +2,7 @@
 
 import { useState, useCallback, useMemo, useRef } from "react";
 import dynamic from "next/dynamic";
-import { MapPin, Loader2, Navigation, Info } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { MapPin, Loader2, Info } from "lucide-react";
 import { Card, CardContent } from "@/components/ui/card";
 import AddressSearch from "@/components/address-search";
 import ResultsPanel from "@/components/results-panel";
@@ -19,10 +18,10 @@ const LocationMap = dynamic(() => import("@/components/location-map"), {
   ),
 });
 
-// Posição inicial do mapa (mesma da V1.2).
+// Posição inicial do mapa.
 const DEFAULT_CENTER: [number, number] = [-21.784, -48.178];
 
-// Raio de pesquisa, em metros, enviado para /api/score (mesmo valor da V1.2).
+// Raio de pesquisa, em metros, enviado para /api/score.
 const SEARCH_RADIUS = 1000;
 
 type SelectedLocation = {
@@ -105,26 +104,6 @@ export default function HomePage() {
     setHighlightedPlace({ ...place });
   }, []);
 
-  const handleUseMyLocation = useCallback(() => {
-    if (!navigator.geolocation) {
-      setError("Geolocalização não suportada pelo navegador.");
-      return;
-    }
-
-    setIsLoading(true);
-    navigator.geolocation.getCurrentPosition(
-      (position) => {
-        const { latitude, longitude } = position.coords;
-        setLocationName("Minha localização");
-        fetchScore(latitude, longitude);
-      },
-      () => {
-        setError("Não foi possível obter sua localização.");
-        setIsLoading(false);
-      }
-    );
-  }, [fetchScore]);
-
   // Todos os estabelecimentos encontrados, para exibir no mapa.
   const establishments = useMemo(
     () => (scoreData ? Object.values(scoreData.categories).flat() : []),
@@ -144,14 +123,7 @@ export default function HomePage() {
               <h1 className="text-base font-semibold text-foreground leading-tight text-balance">
                 MyVicinity
               </h1>
-              <p className="text-xs text-muted-foreground hidden sm:block">
-                
-              </p>
             </div>
-          </div>
-          <div className="flex items-center gap-2">
-            
-              
           </div>
         </div>
       </header>

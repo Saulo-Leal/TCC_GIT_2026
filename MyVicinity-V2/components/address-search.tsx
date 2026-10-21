@@ -108,7 +108,6 @@ export default function AddressSearch({ onSelect, isLoading }: AddressSearchProp
             "transition-all"
           )}
           aria-label="Buscar endereço"
-          aria-expanded={showResults}
         />
 
         <div className="absolute right-3.5 top-1/2 -translate-y-1/2 flex items-center gap-2">

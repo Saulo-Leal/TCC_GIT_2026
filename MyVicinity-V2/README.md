@@ -1,42 +1,62 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# MyVicinity
 
-## Getting Started
+Aplicação web que avalia a qualidade de uma localização com base nos serviços
+próximos (transporte, saúde, comércio, educação, administrativo, lazer e locais
+religiosos). Os dados vêm do OpenStreetMap (Overpass API e Nominatim).
 
-First, run the development server:
+## Executando
 
 ```bash
-#para ativar o conteiner do servidor do Redis
-docker run --name redis-tcc -p 6379:6379 -d redis:alpine
-#Para verificar se ele está rodando:
-docker ps
-#entrar na pasta da aplicacao
-cd MyVicinity-V2
+npm install
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Abra [http://localhost:3000](http://localhost:3000).
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Cache (Redis opcional)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Os resultados de `/api/score` (5 minutos) e de `/api/geocode` (10 minutos) ficam em cache. O cache funciona em dois níveis:
 
-## Learn More
+1. **Redis**, compartilhado entre instâncias, usado quando `REDIS_URL` está definida.
+2. **Memória**, por instância, usada como fallback quando o Redis não está configurado ou está fora do ar.
 
-To learn more about Next.js, take a look at the following resources:
+Para usar o Redis localmente:
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```bash
+docker run --name redis-tcc -p 6379:6379 -d redis:alpine
+echo "REDIS_URL=redis://localhost:6379" > .env.local
+npm run dev
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Sem `REDIS_URL`, a aplicação usa apenas a memória. Se o Redis cair com a aplicação em
+execução, as requisições continuam funcionando (sem esperar) e a reconexão é automática.
 
-## Deploy on Vercel
+As respostas de `/api/score` e `/api/geocode` trazem os cabeçalhos `X-Cache` (`HIT` ou `MISS`) e, em caso de
+`HIT`, `X-Cache-Source` (`redis` ou `memory`).
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+O rate limit continua em memória, por instância.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Busca de endereços
+
+`/api/geocode` consulta o Nominatim (limite de 1 requisição por segundo). Para ser rápida:
+
+- Buscas repetidas (ignorando maiúsculas, acentos e espaços extras) vêm do cache.
+- Buscas idênticas simultâneas compartilham uma única consulta ao Nominatim.
+- Buscas diferentes que chegam juntas entram numa fila (espera máxima de 2 s) em vez de receberem erro 429.
+- A resposta contém só `lat`, `lon` e `display_name`, e o navegador guarda buscas repetidas por 10 minutos.
+
+## Scripts
+
+- `npm run dev`: servidor de desenvolvimento
+- `npm run build`: build de produção
+- `npm start`: executa o build de produção
+- `npm run lint`: ESLint
+
+## Variáveis de ambiente (opcionais)
+
+Limites de requisições (em memória, por instância):
+
+- `RATE_LIMIT_SCORE_PER_MIN` (padrão 10)
+- `RATE_LIMIT_GEOCODE_PER_MIN` (padrão 15)
+- `RATE_LIMIT_OVERPASS_GLOBAL_PER_MIN` (padrão 30)
+- `RATE_LIMIT_OVERPASS_CONCURRENT` (padrão 4)

@@ -56,6 +56,9 @@ export const LIMITS = {
     windowMs: 60_000,
     // A política do Nominatim permite no máximo 1 requisição por segundo.
     upstreamGlobalPerSecond: 1,
+    // Tempo máximo que uma busca espera na fila por sua vez de consultar o
+    // Nominatim. Acima disso, responde 429 em vez de deixar o usuário esperando.
+    upstreamMaxWaitMs: 2000,
   },
 };
 
@@ -170,6 +173,37 @@ export function tooManyRequests(
   }
 
   return Response.json({ error: message }, { status: 429, headers });
+}
+
+// Espaçamento entre chamadas a um serviço externo (ex.: 1 por segundo).
+// Em vez de recusar uma chamada que chega logo após outra, coloca-a na fila e
+// a libera no próximo horário livre, desde que a espera não passe de maxWaitMs.
+// Guarda apenas o próximo horário livre de cada chave (poucas chaves).
+const nextSlotAt = new Map<string, number>();
+
+export async function waitForUpstreamSlot(
+  key: string,
+  intervalMs: number,
+  maxWaitMs: number
+): Promise<{ allowed: boolean; retryAfterSeconds: number }> {
+  const now = Date.now();
+  const start = Math.max(now, nextSlotAt.get(key) ?? 0);
+  const waitMs = start - now;
+
+  if (waitMs > maxWaitMs) {
+    return {
+      allowed: false,
+      retryAfterSeconds: Math.max(1, Math.ceil((waitMs - maxWaitMs) / 1000)),
+    };
+  }
+
+  nextSlotAt.set(key, start + intervalMs);
+
+  if (waitMs > 0) {
+    await new Promise((resolve) => setTimeout(resolve, waitMs));
+  }
+
+  return { allowed: true, retryAfterSeconds: 0 };
 }
 
 // Controle de consultas simultâneas aos serviços externos.

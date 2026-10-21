@@ -39,7 +39,7 @@ export function calculateDistanceScore(
   if (distance <= distanciaMinima) return 50;
   // Zera a nota quando a distância atinge ou ultrapassa o limite.
   if (distance >= maxDistance) return 0;
-  // Reduz a nota proporcionalmente à distância após os primeiros 50 metros.
+  // Reduz a nota proporcionalmente à distância após os primeiros 100 metros.
   return 50 * (1 - (distance - distanciaMinima) / (maxDistance - distanciaMinima));
 }
 
