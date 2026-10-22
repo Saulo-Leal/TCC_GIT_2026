@@ -24,6 +24,8 @@ export function calculateQuantityScore(
   );
 }
 
+// faixa de tolerancia de 100m
+export const MIN_DISTANCE_KM = 0.1
 // Pontuação da distância.
 // Máximo: 50 pontos.
 // Quanto menor a distância, maior a pontuação.
@@ -32,7 +34,7 @@ export function calculateDistanceScore(
   maxDistance: number
 ): number {
   // Converte a distância de referência de quilômetros para metros, se necessário.
-  const distanciaMinima = 0.10; // 100 metros, considerando distâncias em quilômetros.
+  const distanciaMinima = MIN_DISTANCE_KM; // 100 metros, considerando distâncias em quilômetros.
   // Evita cálculos inválidos quando a distância máxima não é adequada.
   if (maxDistance <= distanciaMinima) return distance <= distanciaMinima ? 50 : 0;
   // Mantém a nota máxima para estabelecimentos a até 100 metros.
