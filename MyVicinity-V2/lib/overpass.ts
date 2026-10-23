@@ -103,7 +103,7 @@ export function buildOverpassQuery(
   }
 
   return `
-    [out:json][timeout:15][maxsize:16777216];
+    [out:json][timeout:60][maxsize:16777216];
 
     (
       ${queries.join("\n")}

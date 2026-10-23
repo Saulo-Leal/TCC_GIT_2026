@@ -1,0 +1,4 @@
+"local","lat","lon","nota_api","nota_recalculada","confere","total_pois","nota_transporte","nota_educacao","nota_comercio","nota_saude","nota_administrativo","nota_lazer","nota_religioso","tempo_ms_1a_consulta","x_cache_1a","tempo_ms_2a_consulta","x_cache_2a","data_hora"
+"Centro de Araraquara","-21.7946","-48.1756","85.53","85.53","sim","211","92.3","75.3","87.1","82.9","84.7","73.5","100.0","36025","MISS","7","HIT","2026-10-23T05:02:31.223Z"
+"Periferia (ex: fundo do selmi dei)","-21.719073","-48.155116","45.83","45.83","sim","38","58.9","54.1","48.3","41.7","0.0","0.0","79.6","44180","MISS","5","HIT","2026-10-23T05:03:29.419Z"
+"Área rural (ex: Varjao - Pirai)","-22.574919","-43.967614","0.00","0.00","sim","0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","47982","MISS","5","HIT","2026-10-23T05:04:31.416Z"

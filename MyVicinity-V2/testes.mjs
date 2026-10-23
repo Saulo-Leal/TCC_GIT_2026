@@ -24,11 +24,11 @@ const PAUSE_MS = 7000;
 // Rede (Network) do navegador. Entradas com lat/lon nulos são ignoradas.
 const LOCAIS = [
   { nome: "Centro de Araraquara", lat: -21.7946, lon: -48.1756 }, // confira no mapa
-  { nome: "UNIP Araraquara", lat: -21.7821371, lon: -48.1959471 },
-  { nome: "Bairro residencial-Jardim imperador", lat: -21.753749, lon: -48.161271 },
+  { nome: "UNIP Araraquara", lat: null , lon: null }, //lat: -21.7821371, lon: -48.1959471
+  { nome: "Bairro residencial-Jardim imperador", lat: null, lon: null }, //lat: -21.753749, lon: -48.161271
   { nome: "Periferia (ex: fundo do selmi dei)", lat: -21.719073, lon: -48.155116 },
-  { nome: "Área rural (ex: Varjao - Pirai)", lat: -22.574919, lon: -43.967614 },
-  { nome: "Outra cidade (ex.:Liberdade - Sao Paulo)", lat: -23.560450, lon: -46.631572 },
+  { nome: "Área rural (ex: Varjao - Pirai)", lat: -22.574919, lon: -43.967614 }, // lat: -22.574919, lon: -43.967614 
+  { nome: "Outra cidade (ex.:Liberdade - Sao Paulo)", lat: null, lon: null }, //lat: -23.560450, lon: -46.631572
 ];
 
 // ===== Modelo do TCC (para recalcular a nota de forma independente) =====

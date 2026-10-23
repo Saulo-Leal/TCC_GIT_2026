@@ -1,0 +1,406 @@
+{
+  "categories": {
+    "transporte": [
+      {
+        "id": 6732779556,
+        "type": "node",
+        "name": "UPA Valle Verde",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7249574,
+        "longitude": -48.1578455,
+        "distance": 0.7126225777255129
+      },
+      {
+        "id": 8089193245,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7215229,
+        "longitude": -48.1562101,
+        "distance": 0.2950814393919479
+      },
+      {
+        "id": 8089193237,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7259357,
+        "longitude": -48.15055,
+        "distance": 0.8975977088433577
+      },
+      {
+        "id": 8089193238,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7247721,
+        "longitude": -48.151368,
+        "distance": 0.7431213865966558
+      },
+      {
+        "id": 8089193239,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7239399,
+        "longitude": -48.1503864,
+        "distance": 0.7296098794260742
+      },
+      {
+        "id": 8089193240,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7224324,
+        "longitude": -48.1513983,
+        "distance": 0.5362746113499599
+      },
+      {
+        "id": 8089193244,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7226641,
+        "longitude": -48.1551051,
+        "distance": 0.39964864976433034
+      },
+      {
+        "id": 8089193249,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7231322,
+        "longitude": -48.1495919,
+        "distance": 0.7280992386223121
+      },
+      {
+        "id": 8023550340,
+        "type": "node",
+        "name": "Ponto Final Selmi Dei",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7219487,
+        "longitude": -48.1482457,
+        "distance": 0.7789265610083184
+      },
+      {
+        "id": 8089193250,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7251625,
+        "longitude": -48.1483205,
+        "distance": 0.9758507916838278
+      },
+      {
+        "id": 8089193241,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7217098,
+        "longitude": -48.1508886,
+        "distance": 0.5265183086045812
+      },
+      {
+        "id": 8089193242,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7205137,
+        "longitude": -48.1515806,
+        "distance": 0.3993121127957768
+      },
+      {
+        "id": 8089193243,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7211093,
+        "longitude": -48.1532382,
+        "distance": 0.29867667967643197
+      },
+      {
+        "id": 8089193246,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7195494,
+        "longitude": -48.1538954,
+        "distance": 0.13727515398174284
+      },
+      {
+        "id": 8089193247,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7179322,
+        "longitude": -48.1520152,
+        "distance": 0.3447823154805141
+      },
+      {
+        "id": 8089193248,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7205187,
+        "longitude": -48.149172,
+        "distance": 0.6351977243441279
+      },
+      {
+        "id": 939587958,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7247857,
+        "longitude": -48.1581054,
+        "distance": 0.706425035448782
+      },
+      {
+        "id": 939587959,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7249,
+        "longitude": -48.1582559,
+        "distance": 0.724695484748784
+      },
+      {
+        "id": 939587960,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7246851,
+        "longitude": -48.1579881,
+        "distance": 0.6910976124762813
+      },
+      {
+        "id": 1273965581,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7248547,
+        "longitude": -48.1554315,
+        "distance": 0.6440336357161451
+      }
+    ],
+    "educacao": [
+      {
+        "id": 676384829,
+        "type": "way",
+        "name": "EMEF Vereador Edmilson de Nola Sá",
+        "category": "educacao",
+        "establishmentType": "escola",
+        "latitude": -21.724248,
+        "longitude": -48.1586394,
+        "distance": 0.6809388359591879
+      },
+      {
+        "id": 1275394344,
+        "type": "way",
+        "name": "CER “Valdizar Pinto do Carmo”",
+        "category": "educacao",
+        "establishmentType": "creche",
+        "latitude": -21.7142677,
+        "longitude": -48.1531212,
+        "distance": 0.572522077452034
+      }
+    ],
+    "comercio": [
+      {
+        "id": 5349508088,
+        "type": "node",
+        "name": "Supermecado Real",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7228548,
+        "longitude": -48.1488594,
+        "distance": 0.7715958374175967
+      },
+      {
+        "id": 1178865189,
+        "type": "way",
+        "name": "Formenton Supermercados",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7248215,
+        "longitude": -48.1557344,
+        "distance": 0.6426790971718083
+      },
+      {
+        "id": 1178952834,
+        "type": "way",
+        "name": "Mercado Formenton",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7241147,
+        "longitude": -48.1536012,
+        "distance": 0.5824724340598003
+      },
+      {
+        "id": 1243336381,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7228604,
+        "longitude": -48.1489019,
+        "distance": 0.7682612849282737
+      },
+      {
+        "id": 1245843904,
+        "type": "way",
+        "name": "Formenton Supermercados",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7178082,
+        "longitude": -48.1524319,
+        "distance": 0.3111184169627404
+      }
+    ],
+    "saude": [
+      {
+        "id": 12461769387,
+        "type": "node",
+        "name": "Taty Farma",
+        "category": "saude",
+        "establishmentType": "farmacia",
+        "latitude": -21.724984,
+        "longitude": -48.1549715,
+        "distance": 0.6577856877590181
+      },
+      {
+        "id": 490791928,
+        "type": "way",
+        "name": "UPA Valle Verde",
+        "category": "saude",
+        "establishmentType": "hospital",
+        "latitude": -21.7246497,
+        "longitude": -48.1579375,
+        "distance": 0.6853073280505759
+      },
+      {
+        "id": 676384830,
+        "type": "way",
+        "name": "PSF",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7251579,
+        "longitude": -48.1585244,
+        "distance": 0.7628401456989554
+      },
+      {
+        "id": 1244786038,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7251916,
+        "longitude": -48.1583089,
+        "distance": 0.7562082993312921
+      }
+    ],
+    "administrativo": [],
+    "lazer": [],
+    "religioso": [
+      {
+        "id": 5349508090,
+        "type": "node",
+        "name": "Salão de eventos São Juan Diego",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7226435,
+        "longitude": -48.1527373,
+        "distance": 0.46741019592887967
+      },
+      {
+        "id": 5349508091,
+        "type": "node",
+        "name": "Comunidade Nossa Senhora de Guadalupe",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7230757,
+        "longitude": -48.1528421,
+        "distance": 0.5037482477122064
+      },
+      {
+        "id": 5349508092,
+        "type": "node",
+        "name": "Igreja Congregração Cristã do Brasil",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7220551,
+        "longitude": -48.1515642,
+        "distance": 0.4950717438876742
+      },
+      {
+        "id": 5349508100,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7246921,
+        "longitude": -48.1534142,
+        "distance": 0.6495078137518248
+      },
+      {
+        "id": 5349508101,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7232826,
+        "longitude": -48.1494218,
+        "distance": 0.7522584874445539
+      },
+      {
+        "id": 5349508105,
+        "type": "node",
+        "name": "Igreja O Brasil para Cristo",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7245497,
+        "longitude": -48.150859,
+        "distance": 0.7516671017528532
+      },
+      {
+        "id": 5349508093,
+        "type": "node",
+        "name": "Nossa Senhora de Guadalupe",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7203795,
+        "longitude": -48.1490102,
+        "distance": 0.6477252555013814
+      }
+    ]
+  },
+  "scores": {
+    "transporte": 58.85253361950311,
+    "educacao": 54.07053018302161,
+    "comercio": 48.27119905762553,
+    "saude": 41.67960527516878,
+    "administrativo": 0,
+    "lazer": 0,
+    "religioso": 79.58832244839557
+  },
+  "overallScore": 45.82840976515758
+}

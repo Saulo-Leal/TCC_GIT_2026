@@ -212,7 +212,7 @@ export async function GET(request: Request) {
             }),
 
             // Limita o tempo de espera deste servidor a 20 segundos.
-            signal: AbortSignal.timeout(20000),
+            signal: AbortSignal.timeout(75000),
           });
 
           if (!response.ok) {
