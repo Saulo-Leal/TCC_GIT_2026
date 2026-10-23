@@ -103,12 +103,12 @@ export function buildOverpassQuery(
   }
 
   return `
-    [out:json][timeout:25];
+    [out:json][timeout:15][maxsize:16777216];
 
     (
       ${queries.join("\n")}
     );
 
-    out center;
+    out center qt;
   `;
 }

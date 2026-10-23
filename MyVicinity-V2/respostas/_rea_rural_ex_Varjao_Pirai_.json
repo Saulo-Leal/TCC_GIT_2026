@@ -1,0 +1,21 @@
+{
+  "categories": {
+    "transporte": [],
+    "educacao": [],
+    "comercio": [],
+    "saude": [],
+    "administrativo": [],
+    "lazer": [],
+    "religioso": []
+  },
+  "scores": {
+    "transporte": 0,
+    "educacao": 0,
+    "comercio": 0,
+    "saude": 0,
+    "administrativo": 0,
+    "lazer": 0,
+    "religioso": 0
+  },
+  "overallScore": 0
+}

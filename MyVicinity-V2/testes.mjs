@@ -9,6 +9,7 @@
 // Variáveis opcionais: BASE (padrão http://localhost:3000), RADIUS (padrão 1000).
 
 import { writeFileSync } from "node:fs";
+import { mkdirSync } from "node:fs"; // coloque junto do import do writeFileSync
 
 const BASE = process.env.BASE ?? "http://localhost:3000";
 const RADIUS = Number(process.env.RADIUS ?? 1000);
@@ -19,7 +20,8 @@ const PAUSE_MS = 7000;
 
 // ===== PREENCHA AS COORDENADAS =====
 // Como obter: no Google Maps, clique com o botão direito no ponto e copie
-// "lat, lon". Entradas com lat/lon nulos são ignoradas.
+// "lat, lon"; ou clique no ponto no próprio MyVicinity e leia lat/lon na aba
+// Rede (Network) do navegador. Entradas com lat/lon nulos são ignoradas.
 const LOCAIS = [
   { nome: "Centro de Araraquara", lat: -21.7946, lon: -48.1756 }, // confira no mapa
   { nome: "UNIP Araraquara", lat: -21.7821371, lon: -48.1959471 },
@@ -128,6 +130,9 @@ async function cenarios() {
       continue;
     }
     const pois = Object.values(a.body.categories).reduce((s, arr) => s + arr.length, 0);
+     
+  mkdirSync("respostas", { recursive: true });
+  writeFileSync(`respostas/${l.nome.replace(/[^a-z0-9]+/gi, "_")}.json`, JSON.stringify(a.body, null, 2));
     const { notas, final } = recalcular(a.body.categories, RADIUS / 1000);
     const confere =
       Math.abs(final - a.body.overallScore) < 1e-6 &&
@@ -181,6 +186,28 @@ async function validacao() {
   const g = await chamar(`/api/geocode?q=${encodeURIComponent("Araraquara SP")}`);
   registrar("V09", "Busca de endereço retorna resultados", "200 e lista não vazia",
     `${g.status}, ${Array.isArray(g.body) ? g.body.length : "?"} itens`,
-    g.status === 200 && Array.isArray(g.body) && g.body.length > 0);}
+    g.status === 200 && Array.isArray(g.body) && g.body.length > 0);
 
   // Rate limit: espera a janela de 1 min esvaziar e dispara 12 consultas seguidas.
+  console.log("\nAguardando 65 s para zerar a janela do rate limit...");
+  await sleep(65000);
+  const codigos = [];
+  let retryAfter = null;
+  for (let i = 0; i < 12; i++) {
+    const r = await chamar(`/api/score?lat=${lat}&lon=${lon}&radius=${RADIUS}`);
+    codigos.push(r.status);
+    if (r.status === 429 && retryAfter === null) retryAfter = r.headers.retry;
+  }
+  console.log("Códigos:", codigos.join(" "));
+  const ok200 = codigos.filter((s) => s === 200).length;
+  const ok429 = codigos.filter((s) => s === 429).length;
+  registrar("V10", "Excesso de consultas por IP retorna 429 (limite padrão: 10/min)",
+    "10 x 200 e 2 x 429", `${ok200} x 200 e ${ok429} x 429`, ok200 === 10 && ok429 === 2);
+  registrar("V11", "Resposta 429 traz cabeçalho Retry-After", "presente", retryAfter ?? "ausente", retryAfter !== null);
+
+  writeFileSync("validacao.csv", linhas.map((r) => r.map(csv).join(",")).join("\n"));
+  console.log("\nGerado: validacao.csv (use como base do Apêndice B).");
+}
+
+if (process.argv[2] === "validacao") await validacao();
+else await cenarios();

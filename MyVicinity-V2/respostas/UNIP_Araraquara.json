@@ -1,0 +1,577 @@
+{
+  "categories": {
+    "transporte": [
+      {
+        "id": 7732238958,
+        "type": "node",
+        "name": "Ponto de ônibus",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7833524,
+        "longitude": -48.2047348,
+        "distance": 0.9170409719810749
+      },
+      {
+        "id": 3845294704,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7845344,
+        "longitude": -48.2011714,
+        "distance": 0.6012929958465062
+      },
+      {
+        "id": 6187198709,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7848836,
+        "longitude": -48.2005235,
+        "distance": 0.5622072879496169
+      },
+      {
+        "id": 3845293638,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7830756,
+        "longitude": -48.1945535,
+        "distance": 0.17780781612803287
+      },
+      {
+        "id": 225449301,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7839429,
+        "longitude": -48.2024736,
+        "distance": 0.7027944336755778
+      },
+      {
+        "id": 905790636,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7886133,
+        "longitude": -48.1951818,
+        "distance": 0.7241552892331309
+      },
+      {
+        "id": 815251208,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7849562,
+        "longitude": -48.2038759,
+        "distance": 0.8762524426067685
+      },
+      {
+        "id": 815251209,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7839453,
+        "longitude": -48.204237,
+        "distance": 0.8789065866978324
+      },
+      {
+        "id": 225449304,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7839573,
+        "longitude": -48.2007823,
+        "distance": 0.538326060655312
+      },
+      {
+        "id": 237309899,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7819913,
+        "longitude": -48.1961947,
+        "distance": 0.030196060783448803
+      },
+      {
+        "id": 381301526,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7839793,
+        "longitude": -48.1976406,
+        "distance": 0.26888853853667943
+      },
+      {
+        "id": 587734292,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7834762,
+        "longitude": -48.1978864,
+        "distance": 0.2491044887496633
+      },
+      {
+        "id": 398072908,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7809758,
+        "longitude": -48.189783,
+        "distance": 0.6498062283286881
+      },
+      {
+        "id": 702303686,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7819733,
+        "longitude": -48.1884121,
+        "distance": 0.7785528908600392
+      },
+      {
+        "id": 348407259,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7832281,
+        "longitude": -48.1932018,
+        "distance": 0.30848383052592254
+      },
+      {
+        "id": 702945396,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7844627,
+        "longitude": -48.1924453,
+        "distance": 0.44458976681374546
+      },
+      {
+        "id": 907708746,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7821317,
+        "longitude": -48.1940392,
+        "distance": 0.19730330956381179
+      },
+      {
+        "id": 914184422,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7745255,
+        "longitude": -48.1980934,
+        "distance": 0.8751427261711083
+      },
+      {
+        "id": 683210990,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7806079,
+        "longitude": -48.1885167,
+        "distance": 0.7862146981534093
+      },
+      {
+        "id": 5677520,
+        "type": "relation",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7836681,
+        "longitude": -48.1941272,
+        "distance": 0.2535668505373337
+      },
+      {
+        "id": 5981078,
+        "type": "relation",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "posto_combustivel",
+        "latitude": -21.782435,
+        "longitude": -48.1914419,
+        "distance": 0.4666412572203032
+      }
+    ],
+    "educacao": [
+      {
+        "id": 480974585,
+        "type": "way",
+        "name": "Escola Estadual Narciso da Silva César",
+        "category": "educacao",
+        "establishmentType": "escola",
+        "latitude": -21.7883233,
+        "longitude": -48.1892237,
+        "distance": 0.9772806203048715
+      },
+      {
+        "id": 9136321,
+        "type": "relation",
+        "name": "Coeducar",
+        "category": "educacao",
+        "establishmentType": "escola",
+        "latitude": -21.7868119,
+        "longitude": -48.2006284,
+        "distance": 0.7093816327146164
+      },
+      {
+        "id": 2895640,
+        "type": "relation",
+        "name": "Unip",
+        "category": "educacao",
+        "establishmentType": "universidade",
+        "latitude": -21.7825915,
+        "longitude": -48.1972823,
+        "distance": 0.14644213440777767
+      }
+    ],
+    "comercio": [
+      {
+        "id": 6188040694,
+        "type": "node",
+        "name": "Renner",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.7825893,
+        "longitude": -48.2026315,
+        "distance": 0.6917089947327635
+      },
+      {
+        "id": 6188040695,
+        "type": "node",
+        "name": "Mr. Kitch",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.7826566,
+        "longitude": -48.2022264,
+        "distance": 0.6506142336985234
+      },
+      {
+        "id": 6188040714,
+        "type": "node",
+        "name": "Riachuelo",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.7822506,
+        "longitude": -48.2020789,
+        "distance": 0.632963593453431
+      },
+      {
+        "id": 6188040696,
+        "type": "node",
+        "name": "C&A",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.782014,
+        "longitude": -48.2013279,
+        "distance": 0.5554762252494535
+      },
+      {
+        "id": 6188040697,
+        "type": "node",
+        "name": "Marisa",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.7820588,
+        "longitude": -48.201454,
+        "distance": 0.5683916951033146
+      },
+      {
+        "id": 6188040699,
+        "type": "node",
+        "name": "Grilleto",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7820737,
+        "longitude": -48.2010463,
+        "distance": 0.5262741943864526
+      },
+      {
+        "id": 6188040701,
+        "type": "node",
+        "name": "Divino Fogão",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7819891,
+        "longitude": -48.2012072,
+        "distance": 0.5430958406727266
+      },
+      {
+        "id": 6188040704,
+        "type": "node",
+        "name": "JINJIN",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7822755,
+        "longitude": -48.2009953,
+        "distance": 0.5211739774049622
+      },
+      {
+        "id": 4017284560,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "comercio",
+        "establishmentType": "loja_de_roupas",
+        "latitude": -21.7841106,
+        "longitude": -48.1940288,
+        "distance": 0.29557738901971536
+      },
+      {
+        "id": 4444815334,
+        "type": "node",
+        "name": "Disk Pizza São Geraldo",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7849586,
+        "longitude": -48.1877144,
+        "distance": 0.9062830079111414
+      },
+      {
+        "id": 4977644727,
+        "type": "node",
+        "name": "Ref's Green",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7850885,
+        "longitude": -48.1873749,
+        "distance": 0.944170951225623
+      },
+      {
+        "id": 5973756259,
+        "type": "node",
+        "name": "Panificadora Felizardo",
+        "category": "comercio",
+        "establishmentType": "padaria",
+        "latitude": -21.7849015,
+        "longitude": -48.1876414,
+        "distance": 0.9112002272338328
+      },
+      {
+        "id": 4539930352,
+        "type": "node",
+        "name": "Tellaroso",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7790193,
+        "longitude": -48.1869297,
+        "distance": 0.993948942851086
+      },
+      {
+        "id": 1340639532,
+        "type": "way",
+        "name": "Coco Bambu",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7827204,
+        "longitude": -48.2032602,
+        "distance": 0.7575728563830704
+      },
+      {
+        "id": 683210983,
+        "type": "way",
+        "name": "Nós Em Cena Deck Bar",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7854114,
+        "longitude": -48.2004067,
+        "distance": 0.5865870905694542
+      },
+      {
+        "id": 457934295,
+        "type": "way",
+        "name": "Kanpai",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.780831,
+        "longitude": -48.1869145,
+        "distance": 0.9442576503094038
+      },
+      {
+        "id": 599988922,
+        "type": "way",
+        "name": "Savegnago",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7821207,
+        "longitude": -48.1937085,
+        "distance": 0.2314577967559983
+      },
+      {
+        "id": 508458700,
+        "type": "way",
+        "name": "Supermercados Compre Mais",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7764184,
+        "longitude": -48.1894884,
+        "distance": 0.921920375513026
+      },
+      {
+        "id": 5677485,
+        "type": "relation",
+        "name": "Tonin Superatacado",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.784179,
+        "longitude": -48.1940437,
+        "distance": 0.3002481308312067
+      },
+      {
+        "id": 5981077,
+        "type": "relation",
+        "name": "Sem nome",
+        "category": "comercio",
+        "establishmentType": "conveniencia",
+        "latitude": -21.7825718,
+        "longitude": -48.1913377,
+        "distance": 0.4786601264502659
+      }
+    ],
+    "saude": [
+      {
+        "id": 4739241727,
+        "type": "node",
+        "name": "Estratégia de Saúde da Família João Francisco Alves",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7884802,
+        "longitude": -48.198867,
+        "distance": 0.7666407061132207
+      },
+      {
+        "id": 835347399,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7884893,
+        "longitude": -48.1989111,
+        "distance": 0.7693694766052174
+      },
+      {
+        "id": 704175859,
+        "type": "way",
+        "name": "PSF Santana",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7885305,
+        "longitude": -48.1911834,
+        "distance": 0.8643894935588474
+      },
+      {
+        "id": 1476337696,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.7885035,
+        "longitude": -48.1910856,
+        "distance": 0.8677289212476831
+      },
+      {
+        "id": 703236728,
+        "type": "way",
+        "name": "DrogaVen",
+        "category": "saude",
+        "establishmentType": "farmacia",
+        "latitude": -21.7829683,
+        "longitude": -48.1934679,
+        "distance": 0.27233748126653606
+      },
+      {
+        "id": 1226637394,
+        "type": "way",
+        "name": "Droga Raia",
+        "category": "saude",
+        "establishmentType": "farmacia",
+        "latitude": -21.7827786,
+        "longitude": -48.192089,
+        "distance": 0.40494419814331667
+      }
+    ],
+    "administrativo": [],
+    "lazer": [
+      {
+        "id": 704182683,
+        "type": "way",
+        "name": "Smart Fit",
+        "category": "lazer",
+        "establishmentType": "academia",
+        "latitude": -21.7808647,
+        "longitude": -48.1881724,
+        "distance": 0.8155095847928442
+      },
+      {
+        "id": 703236730,
+        "type": "way",
+        "name": "Tiger Force",
+        "category": "lazer",
+        "establishmentType": "academia",
+        "latitude": -21.7829035,
+        "longitude": -48.1932558,
+        "distance": 0.2908569735586065
+      }
+    ],
+    "religioso": [
+      {
+        "id": 348407301,
+        "type": "way",
+        "name": "Sociedade Espírita Kardecista \"O Consolador\"",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7838158,
+        "longitude": -48.1930171,
+        "distance": 0.3555742970224514
+      },
+      {
+        "id": 222941891,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7749432,
+        "longitude": -48.1923408,
+        "distance": 0.8827722051088094
+      },
+      {
+        "id": 508458703,
+        "type": "way",
+        "name": "Núcleo Assistencial Espírita André Luiz",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7754581,
+        "longitude": -48.1909402,
+        "distance": 0.9053404958788831
+      }
+    ]
+  },
+  "scores": {
+    "transporte": 79.26946160466045,
+    "educacao": 65.11600646882238,
+    "comercio": 78.46589425705807,
+    "saude": 43.361717017228976,
+    "administrativo": 0,
+    "lazer": 56.06350146896631,
+    "religioso": 85.80142794319715
+  },
+  "overallScore": 62.60099075550711
+}

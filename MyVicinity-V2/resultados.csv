@@ -1,0 +1,7 @@
+"local","lat","lon","nota_api","nota_recalculada","confere","total_pois","nota_transporte","nota_educacao","nota_comercio","nota_saude","nota_administrativo","nota_lazer","nota_religioso","tempo_ms_1a_consulta","x_cache_1a","tempo_ms_2a_consulta","x_cache_2a","data_hora"
+"Centro de Araraquara","-21.7946","-48.1756","ERRO 502"
+"UNIP Araraquara","-21.7821371","-48.1959471","62.60","62.60","sim","55","79.3","65.1","78.5","43.4","0.0","56.1","85.8","83940","MISS","6","HIT","2026-10-23T00:59:14.735Z"
+"Bairro residencial-Jardim imperador","-21.753749","-48.161271","63.24","63.24","sim","34","67.5","83.3","66.1","59.5","0.0","49.2","97.3","17622","MISS","5","HIT","2026-10-23T00:59:46.377Z"
+"Periferia (ex: fundo do selmi dei)","-21.719073","-48.155116","ERRO 502"
+"Área rural (ex: Varjao - Pirai)","-22.574919","-43.967614","0.00","0.00","sim","0","0.0","0.0","0.0","0.0","0.0","0.0","0.0","160578","MISS","5","HIT","2026-10-23T01:09:01.999Z"
+"Outra cidade (ex.:Liberdade - Sao Paulo)","-23.56045","-46.631572","75.45","75.45","sim","441","86.0","59.0","93.1","63.0","51.0","68.1","100.0","15943","MISS","5","HIT","2026-10-23T01:09:31.954Z"

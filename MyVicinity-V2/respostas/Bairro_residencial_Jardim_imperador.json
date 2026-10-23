@@ -1,0 +1,367 @@
+{
+  "categories": {
+    "transporte": [
+      {
+        "id": 6524254697,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7625911,
+        "longitude": -48.160355,
+        "distance": 0.9876164768658452
+      },
+      {
+        "id": 2342066198,
+        "type": "node",
+        "name": "Mauricio Galli (Balão Jardim Adalgiza)",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7566981,
+        "longitude": -48.1630321,
+        "distance": 0.3749386631648816
+      },
+      {
+        "id": 5006070796,
+        "type": "node",
+        "name": "Mauricio Galli (Shopping Uirapuru)",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7603235,
+        "longitude": -48.1633098,
+        "distance": 0.7606903813905889
+      },
+      {
+        "id": 6524254696,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7557035,
+        "longitude": -48.163167,
+        "distance": 0.2925173076672797
+      },
+      {
+        "id": 6538567498,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7602277,
+        "longitude": -48.1634921,
+        "distance": 0.755961124633345
+      },
+      {
+        "id": 8089193270,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7580216,
+        "longitude": -48.163327,
+        "distance": 0.5203222991544525
+      },
+      {
+        "id": 6524254700,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7586997,
+        "longitude": -48.1604041,
+        "distance": 0.5575990644861506
+      },
+      {
+        "id": 7527681899,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.753721,
+        "longitude": -48.1628478,
+        "distance": 0.16298112914968615
+      },
+      {
+        "id": 8089193222,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7512028,
+        "longitude": -48.1626761,
+        "distance": 0.3182934662117948
+      },
+      {
+        "id": 8089193268,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7508277,
+        "longitude": -48.1627906,
+        "distance": 0.3609042007119264
+      },
+      {
+        "id": 8089193269,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7523907,
+        "longitude": -48.1629086,
+        "distance": 0.2269009007330483
+      },
+      {
+        "id": 7529743911,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7523698,
+        "longitude": -48.1621477,
+        "distance": 0.17824172437494493
+      },
+      {
+        "id": 7573291340,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7477249,
+        "longitude": -48.1616124,
+        "distance": 0.6708931729895034
+      },
+      {
+        "id": 8089193267,
+        "type": "node",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "ponto_onibus",
+        "latitude": -21.7454509,
+        "longitude": -48.1593926,
+        "distance": 0.9429679323099447
+      },
+      {
+        "id": 804766398,
+        "type": "way",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7567404,
+        "longitude": -48.1629514,
+        "distance": 0.3751279479884241
+      },
+      {
+        "id": 2992543,
+        "type": "relation",
+        "name": "Sem nome",
+        "category": "transporte",
+        "establishmentType": "estacionamento",
+        "latitude": -21.7564384,
+        "longitude": -48.1605838,
+        "distance": 0.3072217350637356
+      }
+    ],
+    "educacao": [
+      {
+        "id": 1448514313,
+        "type": "way",
+        "name": "EE Jandyra Nery Gatti",
+        "category": "educacao",
+        "establishmentType": "escola",
+        "latitude": -21.7544315,
+        "longitude": -48.1611176,
+        "distance": 0.07739659539203281
+      },
+      {
+        "id": 1448514312,
+        "type": "way",
+        "name": "CER Honorina Comelli Lia",
+        "category": "educacao",
+        "establishmentType": "creche",
+        "latitude": -21.7537913,
+        "longitude": -48.1610666,
+        "distance": 0.021502502870971517
+      }
+    ],
+    "comercio": [
+      {
+        "id": 6595252752,
+        "type": "node",
+        "name": "Morada dos Cereais",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.759873,
+        "longitude": -48.1632112,
+        "distance": 0.7097481492789531
+      },
+      {
+        "id": 3393051256,
+        "type": "node",
+        "name": "Divino Gourmet",
+        "category": "comercio",
+        "establishmentType": "restaurante",
+        "latitude": -21.7559104,
+        "longitude": -48.1567101,
+        "distance": 0.5286579976293017
+      },
+      {
+        "id": 7529822220,
+        "type": "node",
+        "name": "Mercado Galli",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7505661,
+        "longitude": -48.1625345,
+        "distance": 0.377352074729207
+      },
+      {
+        "id": 704357300,
+        "type": "way",
+        "name": "Mercado Irmãos Melhado",
+        "category": "comercio",
+        "establishmentType": "supermercado",
+        "latitude": -21.7620057,
+        "longitude": -48.1627611,
+        "distance": 0.9308181224787243
+      },
+      {
+        "id": 804775472,
+        "type": "way",
+        "name": "Pão Caseiro",
+        "category": "comercio",
+        "establishmentType": "padaria",
+        "latitude": -21.7531454,
+        "longitude": -48.162502,
+        "distance": 0.14390555115364637
+      }
+    ],
+    "saude": [
+      {
+        "id": 804769161,
+        "type": "way",
+        "name": "Roseiras",
+        "category": "saude",
+        "establishmentType": "farmacia",
+        "latitude": -21.7557531,
+        "longitude": -48.1628378,
+        "distance": 0.27536748744844136
+      },
+      {
+        "id": 804769164,
+        "type": "way",
+        "name": "Medical Vet",
+        "category": "saude",
+        "establishmentType": "veterinario",
+        "latitude": -21.755436,
+        "longitude": -48.1627793,
+        "distance": 0.2438101871652863
+      },
+      {
+        "id": 473631051,
+        "type": "way",
+        "name": "PSF \"Adolfo Léo\"",
+        "category": "saude",
+        "establishmentType": "posto_saude",
+        "latitude": -21.758703,
+        "longitude": -48.1585806,
+        "distance": 0.6168199591971798
+      }
+    ],
+    "administrativo": [],
+    "lazer": [
+      {
+        "id": 768392047,
+        "type": "way",
+        "name": "Habitus",
+        "category": "lazer",
+        "establishmentType": "academia",
+        "latitude": -21.7566615,
+        "longitude": -48.1637672,
+        "distance": 0.41391056840541063
+      },
+      {
+        "id": 803514267,
+        "type": "way",
+        "name": "Habitus",
+        "category": "lazer",
+        "establishmentType": "academia",
+        "latitude": -21.7580209,
+        "longitude": -48.1621292,
+        "distance": 0.4831210545299951
+      }
+    ],
+    "religioso": [
+      {
+        "id": 704357325,
+        "type": "way",
+        "name": "Igreja Evangélica da Paz",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7612982,
+        "longitude": -48.1630033,
+        "distance": 0.8581975717041769
+      },
+      {
+        "id": 225103586,
+        "type": "way",
+        "name": "Centro Espírita Portal da Luz",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7585955,
+        "longitude": -48.1672684,
+        "distance": 0.8210100497976597
+      },
+      {
+        "id": 225103587,
+        "type": "way",
+        "name": "Igreja Sagrada Família",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7566696,
+        "longitude": -48.1607027,
+        "distance": 0.3298889814256667
+      },
+      {
+        "id": 768392051,
+        "type": "way",
+        "name": "Comunidade Cristã da Colheita",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7536,
+        "longitude": -48.1638003,
+        "distance": 0.2618516893924637
+      },
+      {
+        "id": 770077972,
+        "type": "way",
+        "name": "Congregação Cristã no Brasil",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.749921,
+        "longitude": -48.1666769,
+        "distance": 0.7022105599091192
+      },
+      {
+        "id": 804775447,
+        "type": "way",
+        "name": "Igreja Batista Emanuel",
+        "category": "religioso",
+        "establishmentType": "local_culto",
+        "latitude": -21.7535136,
+        "longitude": -48.1626925,
+        "distance": 0.1492437069884495
+      }
+    ]
+  },
+  "scores": {
+    "transporte": 67.4943648829605,
+    "educacao": 83.33333333333333,
+    "comercio": 66.11267363866381,
+    "saude": 59.51856233683505,
+    "administrativo": 0,
+    "lazer": 49.227190644143846,
+    "religioso": 97.2642385006417
+  },
+  "overallScore": 63.24393416675302
+}

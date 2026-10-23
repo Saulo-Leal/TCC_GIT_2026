@@ -26,7 +26,12 @@ import {
 } from "@/lib/rate-limit";
 
 // Define por quanto tempo (em segundos) um resultado pode permanecer no cache.
-const CACHE_TTL_SECONDS = 5 * 60;
+// Pode ser alterado por SCORE_CACHE_TTL_SECONDS (ex.: 86400 nos testes, para
+// consultar a Overpass uma vez por local).
+const CACHE_TTL_SECONDS =
+  Number(process.env.SCORE_CACHE_TTL_SECONDS) > 0
+    ? Math.floor(Number(process.env.SCORE_CACHE_TTL_SECONDS))
+    : 5 * 60;
 
 // Limites aceitos para o raio de busca (em metros).
 const MIN_RADIUS = 100;
@@ -154,19 +159,31 @@ export async function GET(request: Request) {
 
   try {
         // Servidores Overpass utilizados como fallback.
-    const OVERPASS_SERVERS = [
-      "https://overpass-api.de/api/interpreter",
-      "https://overpass.kumi.systems/api/interpreter",
-      "https://overpass.private.coffee/api/interpreter",
-      "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
-    ];
+        // A lista pode ser trocada por OVERPASS_SERVERS (URLs separadas por vírgula).
+    const OVERPASS_SERVERS = process.env.OVERPASS_SERVERS
+      ? process.env.OVERPASS_SERVERS.split(",")
+          .map((server) => server.trim())
+          .filter(Boolean)
+      : [
+          "https://overpass-api.de/api/interpreter",
+          "https://overpass.kumi.systems/api/interpreter",
+          "https://overpass.private.coffee/api/interpreter",
+          "https://maps.mail.ru/osm/tools/overpass/api/interpreter",
+        ];
 
     // Quantas vezes a lista inteira de servidores será percorrida.
     const MAX_ROUNDS = 3;
 
     let lastError = "";
 
-    for (let round = 1; round <= MAX_ROUNDS && elements === null; round++) {
+    // Consulta rejeitada como inválida (HTTP 400): repetir não adianta.
+    let queryRejected = false;
+
+    for (
+      let round = 1;
+      round <= MAX_ROUNDS && elements === null && !queryRejected;
+      round++
+    ) {
       // A partir da segunda rodada, espera antes de tentar de novo (3s, 6s...).
       if (round > 1) {
         const waitMs = 3000 * 2 ** (round - 2);
@@ -202,12 +219,32 @@ export async function GET(request: Request) {
             // Registra só o status, sem despejar o HTML de erro no log.
             lastError = `Overpass respondeu com status ${response.status}`;
 
-            console.error(`${server}: ${lastError}`);
+                        console.error(`${server}: ${lastError}`);
+
+            if (response.status === 400) {
+              queryRejected = true;
+
+              break;
+            }
 
             continue;
           }
 
           const data = await response.json();
+
+          // A Overpass pode responder 200 com um "remark" de erro de execução
+          // (tempo ou memória esgotados) e lista vazia ou parcial. Isso não pode
+          // virar nota baixa nem ficar no cache: trata como falha do servidor.
+          if (
+            typeof data.remark === "string" &&
+            /runtime error|timed out|out of memory/i.test(data.remark)
+          ) {
+            lastError = `Overpass sinalizou erro de execução: ${data.remark}`;
+
+            console.error(`${server}: ${lastError}`);
+
+            continue;
+          }
 
           elements = data.elements ?? [];
 

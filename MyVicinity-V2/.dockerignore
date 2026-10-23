@@ -1,0 +1,10 @@
+node_modules
+.next
+.git
+.env*
+*.csv
+tabela.tex
+tsconfig.tsbuildinfo
+testes.mjs
+Dockerfile
+docker-compose.yml
